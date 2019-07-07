@@ -1,0 +1,39 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Comment Chain</title>
+
+<link rel="stylesheet" href="{% static 'css/main.css' %}"></head>
+
+<script
+src="https://code.jquery.com/jquery-3.4.1.js"
+integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+crossorigin="anonymous">
+</script>
+
+<script src="{% static 'js/main.js' %}"></script>
+
+<body>
+    <form id="comment-form" method="post" action="">
+        {{form.as_p}}
+        <p><input type="submit" value="Submit"></p>
+        {% csrf_token %}
+    </form>
+    <ul id="comment-list">
+        {% for c in comment_list %}
+        {% with ml=c.path|length %}
+        <li id="{{c.id}}" class="list" style="margin-left:{{ ml|add:ml}}em;">
+            <p class="label"><span class="avatar">MVM</span> - {{c.date|timesince}} ago</p>
+            <p>{{c.content}}</p>
+            <p><a href="" class="reply">Reply</a>&nbsp;&nbsp; <a href="" class="delete" data-path="{{c.path}}">Delete</a></p>
+        </li>
+        {% endwith %}
+        {% empty %}
+        <li>Be the First to make a Comment</li>
+    {% endfor %}
+    </ul>
+</body>
+</html>

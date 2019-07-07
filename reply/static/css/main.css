@@ -1,0 +1,47 @@
+a {
+    font-weight: bold;
+    color: green;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+#comment-list {
+    padding-left: 0px;
+}
+
+.label {
+    font-size: 12px;
+    color: #880000;
+}
+
+#comment-form ul {
+    padding-left: 0px;
+}
+
+#comment-form ul li {
+    list-style-type:  none;
+    padding-bottom: 5px;
+}
+
+
+li{
+    list-style-type: none;
+}
+.list {
+    font-size: 14px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-left: 2px solid gray;
+}
+
+.avatar{
+    background-color: red;
+    border-radius: 20%;
+}
+
+textarea{
+    width:80%;
+}
