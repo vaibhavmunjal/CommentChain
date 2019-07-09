@@ -9,3 +9,6 @@ Add `'reply.apps.ReplyConfig'` in setting.py(INSTALLED_APPS)
 
 Dependent Django version
 `Django==2.2.3`
+
+
+![](ScreecnShot/r-chain.png)
